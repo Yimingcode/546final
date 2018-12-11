@@ -18,10 +18,11 @@ const main = async () => {
     new Field(uuidv1(), "Date", "Deadline of application", "Date", true, true),
     new Field(uuidv1(), "Postion", "What kind of job is this resume for", "String", true, true),
     new Field(uuidv1(), "Salary", "What is the estimated salary?", "Number", true, true),
-    new Field(uuidv1(), "Thought", "How do you think this resume?", "String", true, true),
+    new Field(uuidv1(), "Evaulate", "How do you think this resume?", "String", true, true),
+    new Field(uuidv1(), "Resume name", "Which resume is this comment on?", "String", true, true),              
     new Field(uuidv1(), "Recieve interview", "Did you get a discount on the lift ticket?", "Boolean", true, true)];
     console.log(fields);
-    let activity = await activityType.addActivtyType("Create a new Resume", "Details", true, fields);
+    let activity = await activityType.addActivtyType("Add a Comment", "Details", true, fields);
     const Createid = activity._id;
 
 
@@ -43,8 +44,8 @@ const main = async () => {
         date: '2018-01-01',
         postion: 'java sde',
         salary: '1500',
-        thought: 'good',
-
+        evaluate: 'good',
+        'resume-name': 'appple1',
         userId: user._id
     }
 
@@ -56,8 +57,8 @@ const main = async () => {
         date: '2018-01-01',
         postion: 'front end',
         salary: '1500',
-        thought: 'not bad',
-
+        evaluate: 'not bad',
+        'resume-name': 'appple2',
         userId: user._id
     }
     await userActivity.addUserActivity(act);
@@ -68,8 +69,8 @@ const main = async () => {
         date: '2018-01-01',
         postion: 'back end',
         salary: '1500',
-        thought: 'very good',
-
+        evaluate: 'very good',
+        'resume-name': 'appple3',
         userId: user._id
     }
     await userActivity.addUserActivity(act);
@@ -80,8 +81,8 @@ const main = async () => {
         date: '2018-01-01',
         postion: 'python sde',
         salary: '1500',
-        thought: 'bad',
-
+        evaluate: 'bad',
+        'resume-name': 'appple4',
         userId: user._id
     }
     await userActivity.addUserActivity(act);
