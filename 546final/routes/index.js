@@ -43,8 +43,7 @@ const constructorMethod = app => {
     app.use("/", apiRoutes);
 
     app.use("*", (req, res) => {
-        console.log("catch all");
-        res.render("main/index", null);
+        res.render("main/login", null);
   });
 };
 
